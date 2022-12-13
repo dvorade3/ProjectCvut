@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from tkinter import filedialog
 
 
 class Ui_MainWindow(object):
@@ -79,3 +80,12 @@ class Ui_MainWindow(object):
         self.exp.setText(_translate("MainWindow", "Export"))
         self.souradnice.setText(_translate("MainWindow", "Souřadnice"))
         self.fix_label.setText(_translate("MainWindow", "NÁZEV:"))
+
+class OpenWindowAddMeas:
+    def OpenFile(OpenFile):
+        file = filedialog.askopenfilename(
+            initialdir="C:/Users",
+            title="Otevřit soubor",
+            filetypes=(("Soubor", "*.txt"),)
+        )
+        return OpenFile = open(str(file), 'r')
